@@ -1,1 +1,531 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Conquest Values Interview</title>
 
+  <style>
+    :root{
+      --bg: #0b0f17;
+      --panel: rgba(255,255,255,0.06);
+      --panel-2: rgba(255,255,255,0.09);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.70);
+      --faint: rgba(255,255,255,0.55);
+      --stroke: rgba(255,255,255,0.14);
+      --accent: #c9a86a;
+      --danger: #ff6b6b;
+      --ok: #7ee787;
+
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --shadow: 0 16px 48px rgba(0,0,0,0.40);
+      --max: 1080px;
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height: 100%; }
+    body{
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 30% 10%, rgba(201,168,106,0.18), transparent 60%),
+                  radial-gradient(900px 600px at 70% 30%, rgba(255,255,255,0.07), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a{ color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
+    a:hover{ color: white; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 56px;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 16px;
+      padding: 10px 6px 18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width: 240px;
+    }
+
+    .mark{
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(145deg, rgba(201,168,106,0.95), rgba(201,168,106,0.35));
+      box-shadow: 0 10px 28px rgba(201,168,106,0.22);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .brand h1{
+      font-size: 14px;
+      letter-spacing: 0.10em;
+      margin: 0;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+    }
+    .brand p{
+      margin: 2px 0 0;
+      font-size: 13px;
+      color: var(--faint);
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--stroke);
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 18px;
+    }
+
+    @media (max-width: 920px){
+      .grid{ grid-template-columns: 1fr; }
+      header{ flex-direction: column; align-items: flex-start; }
+      .pill{ width: 100%; justify-content: space-between; }
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.05));
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .card-inner{
+      padding: 18px;
+    }
+
+    .hero h2{
+      font-size: 26px;
+      margin: 2px 0 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p{
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .tag{
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--stroke);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .section-title{
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.78);
+      margin: 0 0 10px;
+    }
+
+    .list{
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .list li{ margin: 8px 0; }
+
+    .notice{
+      padding: 12px 12px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(201,168,106,0.35);
+      background: rgba(201,168,106,0.08);
+      color: rgba(255,255,255,0.84);
+      font-size: 13.5px;
+    }
+
+    .divider{
+      height: 1px;
+      background: rgba(255,255,255,0.10);
+      margin: 16px 0;
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    button{
+      appearance:none;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: transform 0.08s ease, background 0.2s ease, border 0.2s ease;
+    }
+    button:hover{
+      background: rgba(255,255,255,0.10);
+      border-color: rgba(255,255,255,0.22);
+    }
+    button:active{
+      transform: translateY(1px);
+    }
+    .primary{
+      background: rgba(201,168,106,0.20);
+      border-color: rgba(201,168,106,0.45);
+    }
+    .primary:hover{
+      background: rgba(201,168,106,0.26);
+      border-color: rgba(201,168,106,0.55);
+    }
+
+    .chat-shell{
+      min-height: 640px;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .chat-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      padding: 14px 16px;
+      background: rgba(0,0,0,0.22);
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .chat-header strong{
+      font-size: 14px;
+      letter-spacing: 0.02em;
+    }
+    .chat-header span{
+      color: var(--faint);
+      font-size: 13px;
+    }
+
+    .chat-body{
+      padding: 14px;
+      flex: 1;
+    }
+
+    .chat-placeholder{
+      border: 1px dashed rgba(255,255,255,0.22);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hidden{ display:none !important; }
+
+    /* Passcode modal */
+    .modal-backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.62);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 18px;
+      z-index: 50;
+    }
+    .modal{
+      width: 100%;
+      max-width: 520px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(12,16,24,0.96);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .modal .top{
+      padding: 16px 18px 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+    .modal .top h3{
+      margin: 0 0 6px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .modal .top p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .modal .mid{
+      padding: 14px 18px;
+    }
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    label{
+      font-size: 13px;
+      color: var(--faint);
+    }
+    input{
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      font-size: 14px;
+      outline: none;
+    }
+    input:focus{
+      border-color: rgba(201,168,106,0.55);
+      box-shadow: 0 0 0 4px rgba(201,168,106,0.12);
+    }
+    .error{
+      margin-top: 10px;
+      color: var(--danger);
+      font-size: 13px;
+    }
+    .modal .bot{
+      padding: 14px 18px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      border-top: 1px solid rgba(255,255,255,0.10);
+    }
+    .hint{
+      color: var(--faint);
+      font-size: 12.5px;
+    }
+
+    footer{
+      margin-top: 18px;
+      color: var(--faint);
+      font-size: 12.5px;
+      padding: 0 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="mark" aria-hidden="true"></div>
+        <div>
+          <h1>Conquest</h1>
+          <p>Values interview pilot</p>
+        </div>
+      </div>
+
+      <div class="pill" title="This is a pilot and does not replace human decision making">
+        <span>AI assisted decision support</span>
+        <span style="opacity:0.7">No automated hiring decision</span>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Left: framing -->
+      <section class="card hero">
+        <div class="card-inner">
+          <p class="section-title">Overview</p>
+          <h2>Conquest Values Interview</h2>
+          <p>
+            This short interview captures your reflections across eight Conquest values. Your responses help the panel
+            understand your working style and fit, alongside the rest of the interview process.
+          </p>
+
+          <div class="meta">
+            <span class="tag">8 questions</span>
+            <span class="tag">Approx 10 to 15 minutes</span>
+            <span class="tag">Anonymous access for pilot</span>
+            <span class="tag">Timezone Europe London</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <p class="section-title">Before you begin</p>
+          <ul class="list">
+            <li>Answer in your own words, specific examples are best</li>
+            <li>You can take a moment to think before replying</li>
+            <li>Do not include confidential third party information</li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <p class="section-title">Consent</p>
+          <div class="notice">
+            By starting this pilot interview, you consent to Conquest collecting and processing your responses for recruitment
+            and evaluation purposes. AI may be used to assist with scoring and summarisation, but final decisions are made by humans.
+          </div>
+
+          <div class="divider"></div>
+
+          <p class="section-title">Privacy</p>
+          <p style="margin:0;color:var(--muted);font-size:14px;">
+            For this MVP, you will be asked for basic details such as your name and email so we can associate your responses to the role.
+            Your responses are stored securely and are only accessible to authorised Conquest staff involved in the process.
+            This page is unlisted and intended for invited participants only. Please do not forward the link.
+          </p>
+
+          <div class="actions">
+            <button class="primary" id="openGateBtn" type="button">Enter access code to start</button>
+            <button id="scrollChatBtn" type="button">View interview panel</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right: chat embed -->
+      <section class="card chat-shell" id="chatPanel">
+        <div class="chat-header">
+          <div>
+            <strong>Interview chat</strong><br />
+            <span>When ready, follow the prompts in the chat</span>
+          </div>
+          <div>
+            <span id="chatStatus" style="color:var(--faint);font-size:13px;">Locked</span>
+          </div>
+        </div>
+
+        <div class="chat-body">
+          <div id="lockedState" class="chat-placeholder">
+            This interview is currently locked. Click “Enter access code to start” and enter the code provided by Conquest.
+          </div>
+
+          <div id="chatEmbed" class="hidden">
+            <!--
+              STEP 4 WILL GO HERE:
+
+              Paste the Copilot Studio Web Channel embed snippet inside this div.
+
+              Keep this div as the container so the page layout remains stable.
+            -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      Conquest Values Interview Pilot. AI assisted scoring is used to support review, not to make automated decisions. If you have any concerns, contact your Conquest point of contact.
+    </footer>
+  </div>
+
+  <!-- Passcode gate modal -->
+  <div class="modal-backdrop hidden" id="gateModal" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+    <div class="modal">
+      <div class="top">
+        <h3 id="gateTitle">Enter access code</h3>
+        <p>This lightweight gate reduces unintended access during the pilot</p>
+      </div>
+
+      <div class="mid">
+        <div class="field">
+          <label for="passcodeInput">Access code</label>
+          <input id="passcodeInput" type="password" inputmode="text" autocomplete="one-time-code" placeholder="Enter code" />
+          <div class="hint">This is not strong security. For production we would use authentication or email verification</div>
+          <div class="error hidden" id="passcodeError">Incorrect code</div>
+        </div>
+      </div>
+
+      <div class="bot">
+        <button id="closeGateBtn" type="button">Cancel</button>
+        <button class="primary" id="unlockBtn" type="button">Unlock interview</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // MVP gate: prevents casual access, not a security boundary
+    // Change this before each demo and share the code verbally or in a controlled message
+    const ACCESS_CODE = "CQ-DEMO-VA-2026_01";
+
+    const openGateBtn = document.getElementById("openGateBtn");
+    const scrollChatBtn = document.getElementById("scrollChatBtn");
+    const gateModal = document.getElementById("gateModal");
+    const closeGateBtn = document.getElementById("closeGateBtn");
+    const unlockBtn = document.getElementById("unlockBtn");
+    const passcodeInput = document.getElementById("passcodeInput");
+    const passcodeError = document.getElementById("passcodeError");
+
+    const lockedState = document.getElementById("lockedState");
+    const chatEmbed = document.getElementById("chatEmbed");
+    const chatStatus = document.getElementById("chatStatus");
+    const chatPanel = document.getElementById("chatPanel");
+
+    function openGate(){
+      gateModal.classList.remove("hidden");
+      passcodeError.classList.add("hidden");
+      passcodeInput.value = "";
+      setTimeout(() => passcodeInput.focus(), 50);
+    }
+
+    function closeGate(){
+      gateModal.classList.add("hidden");
+    }
+
+    function unlock(){
+      const entered = (passcodeInput.value || "").trim();
+      if (entered !== ACCESS_CODE){
+        passcodeError.classList.remove("hidden");
+        return;
+      }
+      closeGate();
+      lockedState.classList.add("hidden");
+      chatEmbed.classList.remove("hidden");
+      chatStatus.textContent = "Unlocked";
+      chatStatus.style.color = "rgba(126,231,135,0.9)";
+      chatPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    openGateBtn.addEventListener("click", openGate);
+    closeGateBtn.addEventListener("click", closeGate);
+    unlockBtn.addEventListener("click", unlock);
+
+    passcodeInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") unlock();
+      if (e.key === "Escape") closeGate();
+    });
+
+    scrollChatBtn.addEventListener("click", () => {
+      chatPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    // Allow closing modal by clicking backdrop
+    gateModal.addEventListener("click", (e) => {
+      if (e.target === gateModal) closeGate();
+    });
+  </script>
+</body>
+</html>
