@@ -212,11 +212,17 @@
       border-color: rgba(201,168,106,0.55);
     }
 
+  .chat-shell{
+    min-height: 920px;       /* baseline tall panel */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @media (max-width: 920px){
     .chat-shell{
-      min-height: 640px;
-      display:flex;
-      flex-direction:column;
+      min-height: 820px;     /* still tall on mobile */
     }
+  }
 
     .chat-header{
       display:flex;
