@@ -212,6 +212,12 @@
       border-color: rgba(201,168,106,0.55);
     }
 
+    .chat-placeholder button{
+  width: 100%;
+  justify-content: center;
+}
+
+
   .chat-shell{
     min-height: 920px;       /* baseline tall panel */
     display: flex;
@@ -407,11 +413,6 @@
             Your responses are stored securely and are only accessible to authorised Conquest staff involved in the process.
             This page is unlisted and intended for invited participants only. Please do not forward the link.
           </p>
-
-          <div class="actions">
-            <button class="primary" id="openGateBtn" type="button">Enter access code to start</button>
-            <button id="scrollChatBtn" type="button">View interview panel</button>
-          </div>
         </div>
       </section>
 
@@ -429,8 +430,15 @@
 
         <div class="chat-body">
           <div id="lockedState" class="chat-placeholder">
-            This interview is currently locked. Click “Enter access code to start” and enter the code provided by Conquest.
-          </div>
+  <div style="margin-bottom:12px;">
+    This interview is currently locked. Enter the access code provided by Conquest to begin.
+  </div>
+
+  <button class="primary" id="openGateBtn" type="button">
+    Enter access code to start
+  </button>
+</div>
+
 
           <div id="chatEmbed" class="hidden" style="height:100%; min-height:760px;">
             <!DOCTYPE html><html><body><iframe src="https://copilotstudio.microsoft.com/environments/6581d856-d0b4-e9b7-b49a-35fc742cb0c3/bots/cre12_conquestValuesInterview/webchat?__version__=2" frameborder="0" style="width: 100%; height: 100%;"></iframe></body></html>
